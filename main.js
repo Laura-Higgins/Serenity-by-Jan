@@ -54,3 +54,11 @@ for(i = 0; i<candles.length; i++) {
   $candleContainer.appendChild($picture)
   $candleContainer.appendChild($description)
 }
+
+// document.addEventListner('click', function(event) {
+//   if (event === 'click') {
+//     $description.classList.add('visibility')
+//   } else {
+//     $description.classList.remove('visibility')
+//   }
+// }
