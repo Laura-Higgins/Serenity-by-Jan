@@ -38,7 +38,7 @@ for(i = 0; i<candles.length; i++) {
 
   var $name = document.createElement('div')
   $name.textContent = candles[i].name
-  $name.classList.add('style')
+  $name.classList.add('title')
 
   var $picture = document.createElement('img')
   $picture.src = candles[i].source
