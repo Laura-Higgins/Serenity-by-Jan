@@ -33,21 +33,24 @@ var candles = [
 
 for(i = 0; i<candles.length; i++) {
   var $candleContainer = document.createElement('div')
-  $candleContainer.classList.add('col-sm-6')
+  $candleContainer.classList.add('col-sm-6', 'style')
+
 
   var $name = document.createElement('div')
   $name.textContent = candles[i].name
+  $name.classList.add('style')
 
   var $picture = document.createElement('img')
   $picture.src = candles[i].source
 
+
   var $description = document.createElement('div')
   $description.textContent = candles[i].description
+  $description.classList.add('style')
 
   var $gallery = document.querySelector('#gallery')
   $gallery.appendChild($candleContainer)
   $candleContainer.appendChild($name)
   $candleContainer.appendChild($picture)
   $candleContainer.appendChild($description)
-
 }
