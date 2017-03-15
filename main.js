@@ -7,20 +7,20 @@ var candles = [
   },
   {
     id: 1,
-    name: 'Serentiy, NOW!',
+    name: 'Serenity, NOW!',
     description: 'Don\'t beat around the bush, get serene NOW. Peppermint and basil medle together for ahh..serenity. Burns for 100 hours. Wood wick.',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
   {
     id: 2,
     name: 'Shangri-lovely',
-    description: 'Madarin and vanilla channel the scents of Shangria-La, whisking you away to the jungle. Burns for 100 hours. Wood wick',
+    description: 'Mandarin and vanilla channel the scents of Shangri-La, whisking you away to the jungle. Burns for 100 hours. Wood wick',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
   },
   {
     id: 3,
     name: 'Aloahhhh',
-    description: 'Feel like your beachside in Hawaii with coconut and sugar filling the air. Burns for 110 hours. Wood wick.',
+    description: 'Feel like you\'re beachside in Hawaii with coconut and sugar filling the air. Burns for 110 hours. Wood wick.',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
   },
   {
@@ -38,9 +38,21 @@ var candles = [
 ]
 
 for(i = 0; i<candles.length; i++) {
+  createCandleItem(i);
+}
+
+document.addEventListener('click', function(event) {
+  var id = event.target.getAttribute('data-id')
+
+  if(id) {
+    var $description = document.querySelector('div[data-id="' + id + '"]')
+     $description.classList.toggle('hidden')
+  }
+})
+
+function createCandleItem(i) {
   var $candleContainer = document.createElement('div')
   $candleContainer.classList.add('col-sm-6', 'style')
-
 
   var $name = document.createElement('div')
   $name.textContent = candles[i].name
@@ -49,7 +61,6 @@ for(i = 0; i<candles.length; i++) {
   var $picture = document.createElement('img')
   $picture.src = candles[i].source
   $picture.setAttribute('data-id', candles[i].id)
-
 
   var $description = document.createElement('div')
   $description.textContent = candles[i].description
@@ -63,13 +74,3 @@ for(i = 0; i<candles.length; i++) {
   $candleContainer.appendChild($picture)
   $candleContainer.appendChild($description)
 }
-
-document.addEventListener('click', function(event) {
-  var id = event.target.getAttribute('data-id')
-
-  if(id) {
-    var $description = document.querySelector('div[data-id="' + id + '"]')
-     $description.classList.toggle('hidden')
-
-  }
-})
