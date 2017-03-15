@@ -1,0 +1,14 @@
+.style {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin-right: 20px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.hidden {
+  visibility: hidden;
+}

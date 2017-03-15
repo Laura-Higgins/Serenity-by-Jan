@@ -1,9 +1,76 @@
-var images = ['candle1', 'candle2', 'candle3', 'candle4', 'candle5', 'candle6']
+var candles = [
+  {
+    id: 0,
+    name: 'Peace Becomes Her',
+    description: 'Fend off death with this peaceful mixture of aged juniper and winter cranberry. Burns for 100 hours. Wood wick.',
+    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+  },
+  {
+    id: 1,
+    name: 'Serenity, NOW!',
+    description: 'Don\'t beat around the bush, get serene NOW. Peppermint and basil medle together for ahh..serenity. Burns for 100 hours. Wood wick.',
+    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+  },
+  {
+    id: 2,
+    name: 'Shangri-lovely',
+    description: 'Mandarin and vanilla channel the scents of Shangri-La, whisking you away to the jungle. Burns for 100 hours. Wood wick',
+    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+  },
+  {
+    id: 3,
+    name: 'Aloahhhh',
+    description: 'Feel like you\'re beachside in Hawaii with coconut and sugar filling the air. Burns for 110 hours. Wood wick.',
+    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+  },
+  {
+    id: 4,
+    name: 'The Office',
+    description: 'Maybe you\'re most relaxed at work. This clean, sterile mixture of mint and cotton will bring you back to your desk, feeling productive. Burns for 100 hours. Wood wick.',
+    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+  },
+  {
+    id: 5,
+    name: 'Meadow Spring',
+    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
+    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+  },
+]
 
-for(i = 0; i<images.length; i++) {
-  var $imageContainer = document.createElement('div')
-  $imageContainer.classList.add('col-sm-6')
-  $imageContainer.textContent = images[i]
+for(i = 0; i<candles.length; i++) {
+  createCandleItem(i);
+}
+
+document.addEventListener('click', function(event) {
+  var id = event.target.getAttribute('data-id')
+
+  if(id) {
+    var $description = document.querySelector('div[data-id="' + id + '"]')
+     $description.classList.toggle('hidden')
+  }
+})
+
+function createCandleItem(i) {
+  var $candleContainer = document.createElement('div')
+  $candleContainer.classList.add('col-sm-6', 'style')
+
+  var $name = document.createElement('div')
+  $name.textContent = candles[i].name
+  $name.classList.add('title')
+
+  var $picture = document.createElement('img')
+  $picture.src = candles[i].source
+  $picture.setAttribute('data-id', candles[i].id)
+
+  var $description = document.createElement('div')
+  $description.textContent = candles[i].description
+  $description.setAttribute('data-id', candles[i].id)
+  $description.classList.add('hidden')
+  $description.classList.add('style')
+
   var $gallery = document.querySelector('#gallery')
-  $gallery.appendChild($imageContainer)
+  $gallery.appendChild($candleContainer)
+  $candleContainer.appendChild($name)
+  $candleContainer.appendChild($picture)
+  $candleContainer.appendChild($description)
 }
