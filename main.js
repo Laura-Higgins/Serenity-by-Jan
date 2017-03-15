@@ -2,37 +2,37 @@ var candles = [
   {
     id: 0,
     name: 'Peace Becomes Her',
-    description: 'Fend off death with this peaceful mixture of aged juniper and winter cranberry. Burns for 100 hours. Wood wick.',
+    description: 'Fend off death with this peaceful mixture of aged juniper and winter cranberry. Burns for 100 hours. Wood wick. Price: $16.00',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
   {
     id: 1,
     name: 'Serenity, NOW!',
-    description: 'Don\'t beat around the bush, get serene NOW. Peppermint and basil medle together for ahh..serenity. Burns for 100 hours. Wood wick.',
+    description: 'Don\'t beat around the bush, get serene NOW. Peppermint and basil medle together for ahh..serenity. Burns for 100 hours. Wood wick. Price: $16.00',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
   {
     id: 2,
     name: 'Shangri-lovely',
-    description: 'Mandarin and vanilla channel the scents of Shangri-La, whisking you away to the jungle. Burns for 100 hours. Wood wick',
+    description: 'Mandarin and vanilla channel the scents of Shangri-La, whisking you away to the jungle. Burns for 100 hours. Wood wick. Price: $16.00',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
   },
   {
     id: 3,
     name: 'Aloahhhh',
-    description: 'Feel like you\'re beachside in Hawaii with coconut and sugar filling the air. Burns for 110 hours. Wood wick.',
+    description: 'Feel like you\'re beachside in Hawaii with coconut and sugar filling the air. Burns for 110 hours. Wood wick. Price: $16.00',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
   },
   {
     id: 4,
     name: 'The Office',
-    description: 'Maybe you\'re most relaxed at work. This clean, sterile mixture of mint and cotton will bring you back to your desk, feeling productive. Burns for 100 hours. Wood wick.',
+    description: 'Maybe you\'re most relaxed at work. This clean, sterile mixture of mint and cotton will bring you back to your desk, feeling productive. Burns for 100 hours. Wood wick. Price: $16.00',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
   {
     id: 5,
-    name: 'Meadow Spring',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
+    name: 'Spring Meadow',
+    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick. Price: $16.00',
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
 ]
@@ -51,6 +51,8 @@ document.addEventListener('click', function(event) {
 })
 
 function createCandleItem(i) {
+  var shoppingCart = []
+  var orderTotal = 0
   var $candleContainer = document.createElement('div')
   $candleContainer.classList.add('col-sm-6', 'style')
 
@@ -68,9 +70,15 @@ function createCandleItem(i) {
   $description.classList.add('hidden')
   $description.classList.add('style')
 
+  var $button = document.createElement('button')
+  $button.textContent = "Add to cart"
+  $button.setAttribute('class', "button")
+  $button.onclick = shoppingCart.push('data-id')
+
   var $gallery = document.querySelector('#gallery')
   $gallery.appendChild($candleContainer)
   $candleContainer.appendChild($name)
   $candleContainer.appendChild($picture)
   $candleContainer.appendChild($description)
+  $description.appendChild($button)
 }
