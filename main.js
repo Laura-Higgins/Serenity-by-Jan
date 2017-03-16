@@ -36,8 +36,10 @@ var candles = [
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
 ]
+var cart = []
+var itemCount = 0
 
-for(i = 0; i<candles.length; i++) {
+for(i = 0; i < candles.length; i++) {
   createCandleItem(i);
 }
 
@@ -46,13 +48,29 @@ document.addEventListener('click', function(event) {
 
   if(id) {
     var $description = document.querySelector('div[data-id="' + id + '"]')
-     $description.classList.toggle('hidden')
+     $description.classList.add('visible')
+  }
+})
+
+document.addEventListener('click', function(event) {
+  var $button = event.target
+
+  if($button.tagName !== 'BUTTON') {
+    return
+  } else {
+    $button.getAttribute('data-id')
+  }
+  console.log('click')
+    for (i = 0; i < candles.length; i++) {
+    if($button.id.toString() === candles[i].id) {
+      cart.push.candles[i]
+      itemCount++
+    }
   }
 })
 
 function createCandleItem(i) {
-  var shoppingCart = []
-  var orderTotal = 0
+
   var $candleContainer = document.createElement('div')
   $candleContainer.classList.add('col-sm-6', 'style')
 
@@ -73,7 +91,7 @@ function createCandleItem(i) {
   var $button = document.createElement('button')
   $button.textContent = "Add to cart"
   $button.setAttribute('class', "button")
-  $button.onclick = shoppingCart.push('data-id')
+  $button.setAttribute('data-id', candles[i].id)
 
   var $gallery = document.querySelector('#gallery')
   $gallery.appendChild($candleContainer)

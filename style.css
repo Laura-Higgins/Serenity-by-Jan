@@ -13,6 +13,10 @@
   visibility: hidden;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .button {
   border-radius: 25px;
   margin: 10px;
