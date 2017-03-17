@@ -28,3 +28,18 @@
 img:hover {
   opacity: 0.5;
 }
+
+.fa-shopping-cart {
+  font-size: 35px;
+}
+
+.cart-container {
+  margin-top: 25px;
+  text-align: right;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+}
+
+#count {
+  color: #e57093;
+}
