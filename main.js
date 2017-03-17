@@ -44,8 +44,7 @@ var candles = [
 ]
 var cart = []
 
-
-for(i = 0; i < candles.length; i++) {
+for(var i = 0; i < candles.length; i++) {
   createCandleItem(i);
 }
 
@@ -66,7 +65,7 @@ document.addEventListener('click', function(event) {
   } else {
     var $buttonId = $button.getAttribute('data-id')
   }
-  for (i = 0; i < candles.length; i++) {
+  for (var i = 0; i < candles.length; i++) {
     if(parseInt($buttonId) === candles[i].id) {
       cart.push(candles[i])
       var $count = document.querySelector('#count')
@@ -77,9 +76,14 @@ document.addEventListener('click', function(event) {
 
 })
 
+// var $cartIcon = docuemt.querySelector('#cartIcon')
+// $cartIcon.addEventListener('click', function(event) {
+//
+// }
+
 function cartTotal(cart) {
   var total = 0
-  for (i = 0; i < cart.length; i++) {
+  for (var i = 0; i < cart.length; i++) {
     var item = cart[i]
     total += item.price
     var $userTotal = document.querySelector('#userTotal')
