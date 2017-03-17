@@ -12,3 +12,34 @@
 .hidden {
   visibility: hidden;
 }
+
+.visible {
+  visibility: visible;
+}
+
+.button {
+  border-radius: 25px;
+  margin: 10px;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: 600;
+  background-color: #fce0f5;
+}
+
+img:hover {
+  opacity: 0.5;
+}
+
+.fa-shopping-cart {
+  font-size: 35px;
+}
+
+.cart-container {
+  margin-top: 25px;
+  text-align: right;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+}
+
+#count {
+  color: #e57093;
+}
