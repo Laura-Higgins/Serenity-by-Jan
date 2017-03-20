@@ -50,6 +50,7 @@ var $checkout = document.querySelector('#checkout')
 var $count = document.querySelector('#count')
 var $checkoutForm = document.querySelector('#checkoutForm')
 var $submit = document.querySelector('#submit')
+var $closeOrder = document.querySelector('#closeOrder')
 
 for(var i = 0; i < candles.length; i++) {
   createCandleItem(i);
@@ -87,17 +88,20 @@ $cartIcon.addEventListener('click', function(event) {
   $checkout.classList.remove('hidden')
 })
 
-
 $checkoutForm.addEventListener('submit', function(event) {
     event.preventDefault()
     console.log('submitting form!')
 })
 
-
 $submit.addEventListener('click', function(event) {
   $checkoutForm.reset()
+})
+
+$closeOrder.addEventListener('click', function(event) {
   cart.length = []
   $count.textContent = cart.length
+  $gallery.classList.remove('hidden')
+  $checkout.classList.add('hidden')
 })
 
 $goback.addEventListener('click', function(event) {
