@@ -43,6 +43,13 @@ var candles = [
   },
 ]
 var cart = []
+var $cartIcon = document.querySelector('#cartIcon')
+var $goback = document.querySelector('#goback')
+var $gallery = document.querySelector('#gallery')
+var $checkout = document.querySelector('#checkout')
+var $count = document.querySelector('#count')
+var $checkoutForm = document.querySelector('#checkoutForm')
+var $submit = document.querySelector('#submit')
 
 for(var i = 0; i < candles.length; i++) {
   createCandleItem(i);
@@ -53,7 +60,7 @@ document.addEventListener('click', function(event) {
 
   if(id) {
     var $description = document.querySelector('div[data-id="' + id + '"]')
-     $description.classList.add('visible')
+     $description.classList.remove('invisible')
   }
 })
 
@@ -68,20 +75,37 @@ document.addEventListener('click', function(event) {
   for (var i = 0; i < candles.length; i++) {
     if(parseInt($buttonId) === candles[i].id) {
       cart.push(candles[i])
-      var $count = document.querySelector('#count')
       $count.textContent = cart.length
-      cartTotal(cart)
+      cartTotal()
     }
   }
 
 })
 
-// var $cartIcon = docuemt.querySelector('#cartIcon')
-// $cartIcon.addEventListener('click', function(event) {
-//
-// }
+$cartIcon.addEventListener('click', function(event) {
+  $gallery.classList.add('hidden')
+  $checkout.classList.remove('hidden')
+})
 
-function cartTotal(cart) {
+
+$checkoutForm.addEventListener('submit', function(event) {
+    event.preventDefault()
+    console.log('submitting form!')
+})
+
+
+$submit.addEventListener('click', function(event) {
+  $checkoutForm.reset()
+  cart.length = []
+  $count.textContent = cart.length
+})
+
+$goback.addEventListener('click', function(event) {
+  $gallery.classList.remove('hidden')
+  $checkout.classList.add('hidden')
+})
+
+function cartTotal() {
   var total = 0
   for (var i = 0; i < cart.length; i++) {
     var item = cart[i]
@@ -89,12 +113,12 @@ function cartTotal(cart) {
     var $userTotal = document.querySelector('#userTotal')
     $userTotal.textContent = total
   }
-   }
+}
 
 function createCandleItem(i) {
 
   var $candleContainer = document.createElement('div')
-  $candleContainer.classList.add('col-sm-6', 'style')
+  $candleContainer.classList.add('col-sm-6', 'text-center')
 
   var $name = document.createElement('div')
   $name.textContent = candles[i].name
@@ -107,12 +131,12 @@ function createCandleItem(i) {
   var $description = document.createElement('div')
   $description.textContent = candles[i].description
   $description.setAttribute('data-id', candles[i].id)
-  $description.classList.add('hidden')
-  $description.classList.add('style')
+  $description.classList.add('invisible')
+  $description.classList.add('text-center')
 
   var $price = document.createElement('div')
   $price.textContent = candles[i].price
-  $price.classList.add('style')
+  $price.classList.add('text-center')
   $price.classList.add('price')
 
   var $button = document.createElement('button')
@@ -120,7 +144,6 @@ function createCandleItem(i) {
   $button.setAttribute('class', "button")
   $button.setAttribute('data-id', candles[i].id)
 
-  var $gallery = document.querySelector('#gallery')
   $gallery.appendChild($candleContainer)
   $candleContainer.appendChild($name)
   $candleContainer.appendChild($picture)
