@@ -2,7 +2,7 @@ var candles = [
   {
     id: 0,
     name: 'Peace Becomes Her',
-    description: 'Fend off death with this peaceful mixture of aged juniper and winter cranberry. Burns for 100 hours. Wood wick.',
+    description: 'Fend off death with this peaceful mixture of aged juniper and winter cranberry. Burns for 100 hours. Wood wick. ',
     price: 10.00,
     source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
   },
@@ -53,7 +53,7 @@ var $submit = document.querySelector('#submit')
 var $closeOrder = document.querySelector('#closeOrder')
 
 for(var i = 0; i < candles.length; i++) {
-  createCandleItem(i);
+  createCandleItem(candles[i]);
 }
 
 document.addEventListener('click', function(event) {
@@ -95,8 +95,8 @@ $closeOrder.addEventListener('click', function(event) {
   cart = []
   $count.textContent = cart.length
   $checkoutForm.reset()
-  changeWindowHome()
   cartTotal()
+  changeWindowHome()
 })
 
 $goback.addEventListener('click', function(event) {
@@ -123,34 +123,34 @@ function changeWindowCheckout() {
   $checkout.classList.remove('hidden')
 }
 
-function createCandleItem(i) {
+function createCandleItem(candle) {
 
   var $candleContainer = document.createElement('div')
   $candleContainer.classList.add('col-sm-6', 'text-center')
 
   var $name = document.createElement('div')
-  $name.textContent = candles[i].name
+  $name.textContent = candle.name
   $name.classList.add('title')
 
   var $picture = document.createElement('img')
-  $picture.src = candles[i].source
-  $picture.setAttribute('data-id', candles[i].id)
+  $picture.src = candle.source
+  $picture.setAttribute('data-id', candle.id)
 
   var $description = document.createElement('div')
-  $description.textContent = candles[i].description
-  $description.setAttribute('data-id', candles[i].id)
+  $description.textContent = candle.description
+  $description.setAttribute('data-id', candle.id)
   $description.classList.add('invisible')
   $description.classList.add('text-center')
 
   var $price = document.createElement('div')
-  $price.textContent = candles[i].price
+  $price.textContent = candle.price
   $price.classList.add('text-center')
   $price.classList.add('price')
 
   var $button = document.createElement('button')
   $button.textContent = "Add to cart"
   $button.setAttribute('class', "button")
-  $button.setAttribute('data-id', candles[i].id)
+  $button.setAttribute('data-id', candle.id)
 
   $gallery.appendChild($candleContainer)
   $candleContainer.appendChild($name)
