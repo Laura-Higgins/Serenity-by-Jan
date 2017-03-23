@@ -1,87 +1,87 @@
-var candles = [
+var products = [
   {
     id: 0,
-    name: 'Peace Becomes Her',
-    description: 'Fend off death with this peaceful mixture of aged juniper and winter cranberry. Burns for 100 hours. Wood wick. ',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Glow Kit',
+    description: "A collection of four metallic powder highlighters for intense luminosity. Layer shades of Anastasia Beverly Hills Glow Kit, or wear them separately, on the face and body for a radiant glow. Ideal for use with Brush #23.",
+    price: 40.00,
+    source: 'http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dwa30986f8/images/products/FACE/Glow%20Kits/Sweets/glow-kit-sweets.jpg?sw=348&sh=348&sm=fit'
   },
   {
     id: 1,
-    name: 'Serenity, NOW!',
-    description: 'Don\'t beat around the bush, get serene NOW. Peppermint and basil medle together for ahh..serenity. Burns for 100 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Dip Brow Pomade',
+    description: "An award-winning waterproof, multitasking, and buildable matte pomade that stays put. Apply and blend a small amount of Anastasia Beverly Hills DIPBROW® Pomade with an angled brow brush to effortlessly outline, fill, and texturize brows.",
+    price: 18.00,
+    source: 'http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw231ab3a8/images/products/BROWS/Dipbrow/Dipbrow-Medium-Brown/dipbrow-medium-brown.jpg?sw=348&sh=348&sm=fit'
   },
   {
     id: 2,
-    name: 'Shangri-lovely',
-    description: 'Mandarin and vanilla channel the scents of Shangri-La, whisking you away to the jungle. Burns for 100 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+    name: 'Detail Scissors',
+    description: "High-quality, straight-length stainless steel scissors with an ultra-thin blade to precisely trim brows. Brush brows with an ABH custom spooley, then gently apply pressure to the hair with fingers before trimming with Anastasia Beverly Hills Scissors. ",
+    price: 22.50,
+    source: 'http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw3fff0d25/images/products/BROWS/Scissors/ABH01-10002%20scissors/scissors.jpg?sw=348&sh=348&sm=fit'
   },
   {
     id: 3,
-    name: 'Aloahhhh',
-    description: 'Feel like you\'re beachside in Hawaii with coconut and sugar filling the air. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+    name: 'Contour Kit',
+    description: "A best-selling set of three highlight and three contour shades in one must-have kit. Use Anastasia Beverly Hills Contour Cream Kit to sculpt, define, and enhance bone structure and features.",
+    price: 40.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw5749f1f2/images/products/FACE/Contour%20Cream%20Kit/Medium/contour-cream-kit-medium.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 4,
-    name: 'The Office',
-    description: 'Maybe you\'re most relaxed at work. This clean, sterile mixture of mint and cotton will bring you back to your desk, feeling productive. Burns for 100 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Pro Brush A-20',
+    description: "A large powder brush with tapered natural hair for the face. Use the Anastasia Beverly Hills Large Powder Brush A20 to apply and blend face and body products seamlessly.",
+    price: 35.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw8fe1fd4f/images/products/BRUSHES/Pro%20Brushes/A20/A20.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 5,
-    name: 'Spring Meadow',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Ultimate Glow Kit',
+    description: "A collection of six limited edition powder highlighters available in shimmering luster and metallic pearl finishes. Layer shades of Anastasia Beverly Hills Ultimate Glow, or wear them separately, on the face or body for a smooth, even glow that lasts. Ideal for use with Brush #23.",
+    price: 45.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw6d365d17/images/products/FACE/Glow%20Kits/Ultimate%20Glow/ultimate-glow-kit.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 6,
-    name: 'Spring Meadow',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+    name: 'Eyeshadow Singles',
+    description: "A collection of single, fine-milled powder eye shadows in individual pans. Use Anastasia Beverly Hills Eye Shadow Singles to create a professional-style four or eight-pan custom, refillable palette.",
+    price: 12.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw1ac0ad6b/images/products/EYES/Eye%20Shadow%20Singles/Macaroon/macaroon-eye-shadow-a.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 7,
-    name: 'Spring Meadow',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Duality Brow Highlighter',
+    description: "A double-sided pencil that highlights and defines brows—and makes arches pop. Use Anastasia Beverly Hills Highlighting Duo Pencil’s shimmery end to illuminate brow bones, and the matte end to softly define.",
+    price: 22.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dwc2937eec/images/products/BROWS/Highlighting%20Duo%20Pencil/ABH01-19201%20duality%20CAMILLE%20SAND/brow-duality-camille-sand.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 8,
-    name: 'Spring Meadow',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+    name: 'Powder Contour Kit',
+    description: 'A best-selling set of three powder highlight and three powder contour shades. Use Anastasia Beverly Hills Contour Powder Kit to create the illusions of higher cheekbones, a slimmer nose, softer jawline, or smaller forehead. ',
+    price: 40.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw719fa809/images/products/FACE/Contour%20Kit/LIGHT%20TO%20MEDIUM/Contour-Kit-Light-to-medium.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 9,
-    name: 'Spring Meadow',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Pro Tool Sharpener',
+    description: "A professional-quality pencil sharpener that creates a sharp tip. Use Anastasia Beverly Hills Sharpener with brow, makeup, and lip pencils for expert precision and peak performance.",
+    price: 6.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw2dc3afd7/images/products/BROWS/Sharpener/ABH01-12001%20sharpener/sharpener.jpg?sw=348&sh=348&sm=fit"
   },
   {
     id: 10,
-    name: 'Spring Meadow',
+    name: 'Brow Definer',
     description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1073481.jpg'
+    price: 23.00,
+    source: 'http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dw54aa39ef/images/products/BROWS/BROW%20DEFINER/ABH01-04409%20Dark%20Brown/brow-definer-dark-brown.jpg?sw=348&sh=348&sm=fit'
   },
   {
     id: 11,
-    name: 'Spring Meadow',
-    description: 'Bambi was rarely stressed. Feel like a fawn in Spring with this delicious lavander and orange mixture. Burns for 110 hours. Wood wick.',
-    price: 10.00,
-    source: 'http://www.yankeecandle.com/media/images/product/medium/1351702.jpg'
+    name: 'Pro Brush A-26',
+    description: "A fluffy round brush with synthetic fibers for soft, seamless blending of powder and emollient-based products. Use the Anastasia Beverly Hills Crease Blending Brush A26 to soften and diffuse edges. ",
+    price: 22.00,
+    source: "http://demandware.edgesuite.net/sits_pod46/dw/image/v2/BBLL_PRD/on/demandware.static/-/Sites-anastasia-master-catalog/default/dwb00c1d30/images/products/BRUSHES/Pro%20Brushes/A26/A26.jpg?sw=348&sh=348&sm=fit"
   },
 ]
 var cart = []
@@ -97,8 +97,8 @@ var $description = document.querySelector('#description')
 var views = [$gallery, $checkout, $description]
 
 
-for(var i = 0; i < candles.length; i++) {
-  createCandleItem(candles[i]);
+for(var i = 0; i < products.length; i++) {
+  createProductItem(products[i]);
 }
 
 function changeView(view) {
@@ -111,10 +111,10 @@ function changeView(view) {
 document.querySelectorAll(".show-description").forEach(function ($button) {
   $button.addEventListener('click', function(event) {
     var id = event.target.getAttribute('data-id')
-    var candle = findCandle(parseInt(id));
+    var product = findProduct(parseInt(id));
 
-    if(parseInt(id) === candle.id) {
-      showCandle(candle)
+    if(parseInt(id) === product.id) {
+      showProduct(product)
       changeView($description)
 
     }
@@ -131,9 +131,9 @@ $description.addEventListener('click', function (event) {
 
     } else {
 
-      for(var i = 0; i< candles.length; i++) {
-        if(parseInt(buttonId) === candles[i].id) {
-          cart.push(candles[i])
+      for(var i = 0; i< products.length; i++) {
+        if(parseInt(buttonId) === products[i].id) {
+          cart.push(products[i])
           $count.textContent = cart.length
           cartTotal(cart)
         }
@@ -173,39 +173,39 @@ function cartTotal() {
   $userTotal.textContent = total
 }
 
-function createCandleItem(candle) {
+function createProductItem(product) {
 
-  var $candleContainer = document.createElement('div')
-  $candleContainer.classList.add('col-sm-4', 'text-center')
+  var $productContainer = document.createElement('div')
+  $productContainer.classList.add('col-sm-4', 'text-center')
 
   var $name = document.createElement('div')
-  $name.textContent = candle.name
+  $name.textContent = product.name
   $name.classList.add('title')
 
   var $picture = document.createElement('img')
-  $picture.src = candle.source
+  $picture.src = product.source
 
   var $viewDetailsButton = document.createElement('button')
-  $viewDetailsButton.textContent = "view more details"
+  $viewDetailsButton.textContent = "view details"
   $viewDetailsButton.classList.add("button", "show-description")
-  $viewDetailsButton.setAttribute('data-id', candle.id)
+  $viewDetailsButton.setAttribute('data-id', product.id)
 
 
-  $gallery.appendChild($candleContainer)
-  $candleContainer.appendChild($name)
-  $candleContainer.appendChild($picture)
-  $candleContainer.appendChild($viewDetailsButton)
+  $gallery.appendChild($productContainer)
+  $productContainer.appendChild($name)
+  $productContainer.appendChild($picture)
+  $productContainer.appendChild($viewDetailsButton)
 }
 
-function findCandle(id) {
-  for(var i = 0; i < candles.length; i++) {
-    if (candles[i].id === id) {
-      return candles[i]
+function findProduct(id) {
+  for(var i = 0; i < products.length; i++) {
+    if (products[i].id === id) {
+      return products[i]
     }
   }
 }
 
-function showCandle(candle) {
+function showProduct(product) {
   var $deletePrevious = document.querySelector('.descriptionContainer')
   if($deletePrevious) {
   $deletePrevious.parentNode.removeChild($deletePrevious)
@@ -215,22 +215,23 @@ function showCandle(candle) {
     $descriptionContainer.classList.add("text-center", "descriptionContainer")
 
   var $picture = document.createElement('img')
-  $picture.src = candle.source
+  $picture.src = product.source
 
-  var $Candledescription = document.createElement('div')
-  $Candledescription.textContent = candle.description
+  var $productDescription = document.createElement('div')
+  $productDescription.classList.add('col-sm-4', 'offset-sm-4')
+  $productDescription.textContent = product.description
 
   var $title = document.createElement('div')
-  $title.textContent = candle.name
+  $title.textContent = product.name
   $title.classList.add('title')
 
   var $price = document.createElement('div')
-  $price.textContent = "$"+ candle.price + ".00"
+  $price.textContent = "$"+ product.price + ".00"
   $price.classList.add('price')
 
   var $addToCartButton = document.createElement('button')
   $addToCartButton.textContent = "add to cart!"
-  $addToCartButton.setAttribute('data-id', candle.id)
+  $addToCartButton.setAttribute('data-id', product.id)
   $addToCartButton.classList.add("button")
 
   var $goback2 = document.createElement('button')
@@ -241,7 +242,7 @@ function showCandle(candle) {
   $description.appendChild($descriptionContainer)
   $descriptionContainer.appendChild($title)
   $descriptionContainer.appendChild($picture)
-  $descriptionContainer.appendChild($Candledescription)
+  $descriptionContainer.appendChild($productDescription)
   $descriptionContainer.appendChild($price)
   $descriptionContainer.appendChild($addToCartButton)
   $descriptionContainer.appendChild($goback2)

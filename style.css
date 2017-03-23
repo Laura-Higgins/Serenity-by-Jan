@@ -1,28 +1,19 @@
-.title {
-  text-align: center;
-  font-size: 30px;
-  font-family: 'Shadows Into Light', cursive;
-}
-
-.hidden {
-  display: none;
-}
-
 .button {
   border-radius: 25px;
   margin-bottom: 50px;
   font-family: 'Shadows Into Light', cursive;
   font-weight: 600;
-  background-color: #fce0f5;
+  background-color: white;
+  margin-left: 20px;
 }
 
-img:hover {
-  opacity: 0.5;
+#carousel {
+  margin-bottom: 100px;
+  width: 100%;
 }
 
-.fa-shopping-cart {
-  font-size: 35px;
-  margin-top: 50px;
+.carousel-inner img {
+  margin: auto;
 }
 
 .cart-container {
@@ -31,23 +22,48 @@ img:hover {
   margin: auto;
   width: 100%;
   z-index: 10000;
+  text-align: right;
+  left: 0;
   font-family: 'Shadows Into Light', cursive;
   font-size: 30px;
+  padding-right: 15%;
+  padding-top: 30px;
 }
 
 #count {
   color: #e57093;
+  font-weight: 600;
 }
 
-.price {
-  color: #e57093;
-  margin-bottom: 30px;
+.fa-shopping-cart {
+  font-size: 35px;
+  margin-top: 50px;
+}
+
+#goback {
+  margin-top: 30px;
+  border: 1px solid;
+  background-color: #fbd9e3;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+img:hover {
+  opacity: 0.5;
 }
 
 .jumbotron {
   text-align: center;
   background-color: white;
-  margin-left: 20%;
+  margin-top: 40px;
 }
 
 .jumbotron h1 {
@@ -55,17 +71,38 @@ img:hover {
   font-size: 100px;
 }
 
-.carousel-inner img {
-  margin: auto;
+.price {
+  color: #e57093;
+  margin-bottom: 30px;
 }
 
-#carousel {
-  margin-bottom: 100px;
-  width: 100%;
-}
-
-h1 {
+#purchase {
   font-family: 'Shadows Into Light', cursive;
-  margin-bottom: 50px;
+  font-size: 40px;
+}
+
+#promo {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 40px;
   text-align: center;
+  background-color: #f54b7d;
+  color: white;
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  padding-right: 100px;
+}
+
+#submit {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Shadows Into Light', cursive;
 }
