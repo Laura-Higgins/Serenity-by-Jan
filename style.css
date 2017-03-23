@@ -8,13 +8,9 @@
   display: none;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .button {
   border-radius: 25px;
-  margin: 10px;
+  margin-bottom: 50px;
   font-family: 'Shadows Into Light', cursive;
   font-weight: 600;
   background-color: #fce0f5;
@@ -26,11 +22,15 @@ img:hover {
 
 .fa-shopping-cart {
   font-size: 35px;
+  margin-top: 50px;
 }
 
 .cart-container {
-  margin-top: 25px;
-  text-align: right;
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 10000;
   font-family: 'Shadows Into Light', cursive;
   font-size: 30px;
 }
@@ -41,4 +41,31 @@ img:hover {
 
 .price {
   color: #e57093;
+  margin-bottom: 30px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: white;
+  margin-left: 20%;
+}
+
+.jumbotron h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 100px;
+}
+
+.carousel-inner img {
+  margin: auto;
+}
+
+#carousel {
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  margin-bottom: 50px;
+  text-align: center;
 }
