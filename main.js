@@ -116,6 +116,7 @@ var $closeOrder = document.querySelector('#closeOrder')
 var $description = document.querySelector('#description')
 var views = [$gallery, $checkout, $description]
 var $firstPicture = document.querySelector('#firstPicture')
+var $searchForm = document.querySelector('#search-form')
 
 
 for(var i = 0; i < products.length; i++) {
@@ -169,6 +170,11 @@ $description.addEventListener('click', function (event) {
       }
     }
   }
+})
+
+$searchForm.addEventListener('submit', function(event) {
+  event.preventDefault()
+  console.log('hi')
 })
 
 $cartIcon.addEventListener('click', function(event) {
