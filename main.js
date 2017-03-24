@@ -144,6 +144,7 @@ document.addEventListener('click', function (event) {
   if(parseInt(id) === product.id) {
     var $product = showProduct(product)
     empty($description)
+    empty($searchResults)
     $description.appendChild($product)
     changeView($description)
   }
