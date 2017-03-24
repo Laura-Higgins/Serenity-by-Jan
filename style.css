@@ -1,44 +1,112 @@
-.title {
-  text-align: center;
-  font-size: 30px;
+.button {
+  border-radius: 25px;
+  margin-bottom: 50px;
   font-family: 'Shadows Into Light', cursive;
+  font-weight: 600;
+  background-color: white;
+  margin-left: 20px;
+}
+
+#carousel {
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.carousel-inner img {
+  margin: auto;
+}
+
+.cart-container {
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 10000;
+  text-align: right;
+  left: 0;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  padding-right: 5%;
+  padding-top: 30px;
+}
+
+#count {
+  color: #e57093;
+  font-weight: 600;
+}
+
+.fa-shopping-cart {
+  font-size: 35px;
+  margin-top: 50px;
+}
+
+#goback {
+  margin-top: 30px;
+  border: 1px solid;
+  background-color: #fbd9e3;
 }
 
 .hidden {
   display: none;
 }
 
-.visible {
-  visibility: visible;
-}
-
-.button {
-  border-radius: 25px;
-  margin: 10px;
+h1 {
   font-family: 'Shadows Into Light', cursive;
-  font-weight: 600;
-  background-color: #fce0f5;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 img:hover {
   opacity: 0.5;
 }
 
-.fa-shopping-cart {
-  font-size: 35px;
+.jumbotron {
+  text-align: center;
+  background-color: white;
+  margin-top: 40px;
 }
 
-.cart-container {
-  margin-top: 25px;
-  text-align: right;
+.jumbotron h1 {
   font-family: 'Shadows Into Light', cursive;
-  font-size: 30px;
-}
-
-#count {
-  color: #e57093;
+  font-size: 100px;
 }
 
 .price {
   color: #e57093;
+  margin-bottom: 30px;
+}
+
+#purchase {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 40px;
+}
+
+#promo {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 40px;
+  text-align: center;
+  background-color: #f54b7d;
+  color: white;
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  padding-right: 100px;
+}
+
+#submit {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.textStyle {
+  font-size: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Shadows Into Light', cursive;
 }
