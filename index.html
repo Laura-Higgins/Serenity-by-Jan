@@ -33,7 +33,7 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://images.ulta.com/is/image/Ulta/bs_anastasia_rotator2?scl=1" alt="First slide">
+                <img id="firstPicture" class="d-block img-fluid" src="http://images.ulta.com/is/image/Ulta/bs_anastasia_rotator2?scl=1" alt="First slide">
               </div>
               <div class="carousel-item">
                 <img class="d-block img-fluid" src="https://pbs.twimg.com/media/CtypdGZWgAAfMSX.jpg:large" alt="Second slide">
@@ -62,10 +62,9 @@
           </div>
         </div>
       </div>
-      <div class="hidden" id="description">
-      </div>
+      <div class="hidden" id="description"></div>
       <div id="checkout" class="hidden">
-      <h1>Checkout Time!</h1>
+        <h1>Checkout Time!</h1>
         <div class="row">
           <div class="col-sm-4 offset-sm-4">
             <form id="checkoutForm">
@@ -89,7 +88,7 @@
                 <span>Purchase Total: $<span id="userTotal"></span></span>
               </div>
               <div class="text-center">
-                <button type="submit" id="submit" class="button"  data-toggle="modal" data-target="#myModal">Submit order</button>
+                <button type="submit" id="submit" class="button btn-lg"  data-toggle="modal" data-target="#myModal">Submit Order</button>
               </div>
             </form>
             <div class="text-center" id="">
