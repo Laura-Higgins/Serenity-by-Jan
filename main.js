@@ -116,11 +116,14 @@ var $closeOrder = document.querySelector('#closeOrder')
 var $description = document.querySelector('#description')
 var views = [$gallery, $checkout, $description]
 var $firstPicture = document.querySelector('#firstPicture')
+var $searchForm = document.querySelector('#search-form')
+var $searchResults = document.querySelector('#search-results')
 
 
 for(var i = 0; i < products.length; i++) {
   if(products[i].type !== 'promo') {
-  createProductItem(products[i]);
+    var $product = createProductItem(products[i]);
+    $gallery.appendChild($product)
   }
 }
 
@@ -131,17 +134,20 @@ function changeView(view) {
   view.classList.remove('hidden')
 }
 
-document.querySelectorAll(".show-description").forEach(function ($button) {
-  $button.addEventListener('click', function(event) {
-    var id = event.target.getAttribute('data-id')
-    var product = findProduct(parseInt(id));
+document.addEventListener('click', function (event) {
+  if (!event.target.classList.contains('show-description')) {
+    return
+  }
+  var id = event.target.getAttribute('data-id')
+  var product = findProduct(parseInt(id));
 
-    if(parseInt(id) === product.id) {
-      showProduct(product)
-      changeView($description)
-
-    }
-  })
+  if(parseInt(id) === product.id) {
+    var $product = showProduct(product)
+    empty($description)
+    empty($searchResults)
+    $description.appendChild($product)
+    changeView($description)
+  }
 })
 
 document.querySelector("#firstPicture").addEventListener('click', function(event) {
@@ -171,13 +177,52 @@ $description.addEventListener('click', function (event) {
   }
 })
 
+$searchForm.addEventListener('submit', function(event) {
+  event.preventDefault()
+  var data = new FormData(event.target)
+  var searchTerm = data.get('search')
+  var results = searchItems(products, searchTerm)
+  empty($searchResults)
+  for (var i = 0; i < results.length; i++) {
+    var $product = createProductItem(results[i])
+    $searchResults.appendChild($product)
+  }
+  changeView($searchResults)
+})
+
+function empty($element) {
+  while ($element.firstChild) {
+    $element.removeChild($element.firstChild)
+  }
+}
+
+function searchItems(items, searchTerm) {
+  var term = searchTerm.toLowerCase()
+  var matches = items.filter(function (item) {
+    var text = (item.name + item.description).toLowerCase()
+    return text.includes(term)
+  })
+  matches.sort(function (itemA, itemB) {
+    var nameA = itemA.name.toLowerCase()
+    var nameB = itemB.name.toLowerCase()
+    if (nameA.includes(term) && nameB.includes(term)) {
+      return 0
+    }
+    if (nameA.includes(term) && !nameB.includes(term)) {
+      return -1
+    }
+    return 1
+  })
+  return matches
+}
+
 $cartIcon.addEventListener('click', function(event) {
   changeView($checkout)
 })
 
 $checkoutForm.addEventListener('submit', function(event) {
-    event.preventDefault()
-    console.log('submitting form!')
+  event.preventDefault()
+  console.log('submitting form!')
 })
 
 $closeOrder.addEventListener('click', function(event) {
@@ -218,11 +263,11 @@ function createProductItem(product) {
   $viewDetailsButton.classList.add("button", "show-description")
   $viewDetailsButton.setAttribute('data-id', product.id)
 
-
-  $gallery.appendChild($productContainer)
   $productContainer.appendChild($name)
   $productContainer.appendChild($picture)
   $productContainer.appendChild($viewDetailsButton)
+
+  return $productContainer
 }
 
 function findProduct(id) {
@@ -234,10 +279,6 @@ function findProduct(id) {
 }
 
 function showProduct(product) {
-  var $deletePrevious = document.querySelector('.descriptionContainer')
-  if($deletePrevious) {
-    $deletePrevious.parentNode.removeChild($deletePrevious)
-  }
 
   var $descriptionContainer = document.createElement('div')
   $descriptionContainer.classList.add("text-center", "descriptionContainer")
@@ -267,11 +308,12 @@ function showProduct(product) {
   $goback2.setAttribute('data-id', 'goback2')
   $goback2.classList.add('button')
 
-  $description.appendChild($descriptionContainer)
   $descriptionContainer.appendChild($title)
   $descriptionContainer.appendChild($picture)
   $descriptionContainer.appendChild($productDescription)
   $descriptionContainer.appendChild($price)
   $descriptionContainer.appendChild($addToCartButton)
   $descriptionContainer.appendChild($goback2)
+
+  return $descriptionContainer
 }
