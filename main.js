@@ -174,8 +174,21 @@ $description.addEventListener('click', function (event) {
 
 $searchForm.addEventListener('submit', function(event) {
   event.preventDefault()
-  console.log('hi')
+  var data = new FormData(event.target)
+  var searchTerm = data.get('search')
+  var results = searchItems(products, searchTerm)
+  console.log(results)
 })
+
+
+function searchItems(items, searchTerm) {
+  var term = searchTerm.toLowerCase()
+  var matches = items.filter(function (item) {
+    var text = (item.name + item.description).toLowerCase()
+    return text.indexOf(term) > -1
+  })
+  return matches
+}
 
 $cartIcon.addEventListener('click', function(event) {
   changeView($checkout)
